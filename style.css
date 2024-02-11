@@ -1,0 +1,119 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe0e0;
+    color: #333;
+}
+
+header, footer {
+    background-color: #ffcccc;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #d6336c;
+}
+
+#gallery, #notes, #surprise, main {
+    margin: 20px;
+    padding: 10px;
+    background-color: #fff3f3;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #d6336c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Makes buttons stack vertically */
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #b82e5f;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffcccc;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    header, footer {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    #gallery, #notes, #surprise, main {
+        margin: 10px;
+        padding: 5px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    iframe {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Soften the edges of the photos */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Add a shadow to images to lift them off the page */
+.gallery img:hover {
+    transform: scale(1.05); /* Slightly increase size */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add shadow for depth */
+}
+
+.photo {
+    position: relative;
+    overflow: hidden; /* Ensure the caption fits inside the photo container */
+    border-radius: 8px; /* Match the image border radius */
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #ffffff;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    border-radius: 0 0 8px 8px; /* Rounded corners at the bottom */
+}
+
+.photo:hover .caption {
+    transform: translateY(0); /* Slide up caption on hover */
+}
+
